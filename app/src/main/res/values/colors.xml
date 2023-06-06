@@ -2,4 +2,30 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!-- Colores básicos -->
+    <color name="color_primary">#FF0000</color>
+    <color name="color_secondary">#00FF00</color>
+    <color name="color_tertiary">#0000FF</color>
+    <!-- Colores neutros -->
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_black">#000000</color>
+    <color name="color_gray">#808080</color>
+    <!-- Colores adicionales -->
+    <color name="color_yellow">#FFFF00</color>
+    <color name="color_orange">#FFA500</color>
+    <color name="color_purple">#800080</color>
+    <color name="color_pink">#FFC0CB</color>
+    <color name="color_brown">#A52A2A</color>
+    <color name="color_teal">#008080</color>
+    <color name="color_lime">#00FF00</color>
+    <color name="color_cyan">#00FFFF</color>
+    <!-- Otros colores -->
+    <color name="color_silver">#C0C0C0</color>
+    <color name="color_gold">#FFD700</color>
+    <color name="color_magenta">#FF00FF</color>
+    <color name="color_indigo">#4B0082</color>
+    <color name="color_maroon">#800000</color>
+    <color name="color_navy">#000080</color>
+    <!-- Colores personalizados -->
+    <color name="color_custom">#123456</color>
 </resources>

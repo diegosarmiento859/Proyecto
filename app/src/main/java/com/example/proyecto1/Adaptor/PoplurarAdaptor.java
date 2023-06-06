@@ -1,5 +1,7 @@
 package com.example.proyecto1.Adaptor;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.proyecto1.Activity.ShowDetailsActivity2;
 import com.example.proyecto1.Domain.CategoryDomain;
 import com.example.proyecto1.Domain.FoodDomain;
 import com.example.proyecto1.R;
@@ -32,7 +35,7 @@ public class PoplurarAdaptor extends RecyclerView.Adapter<PoplurarAdaptor.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PoplurarAdaptor.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull PoplurarAdaptor.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
     holder.title.setText(popularFood.get(position).getTitle());
     holder.fee.setText(String.valueOf(popularFood.get(position).getFee()));
 
@@ -41,8 +44,16 @@ public class PoplurarAdaptor extends RecyclerView.Adapter<PoplurarAdaptor.ViewHo
         Glide.with(holder.itemView.getContext())
                 .load(drawableResourceId)
                 .into(holder.pic);
-    }
 
+        holder.addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(holder.itemView.getContext(), ShowDetailsActivity2.class);
+                intent.putExtra("object",popularFood.get(position));
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
+    }
     @Override
     public int getItemCount() {
         return popularFood.size();
@@ -58,9 +69,6 @@ public class PoplurarAdaptor extends RecyclerView.Adapter<PoplurarAdaptor.ViewHo
           fee=itemView.findViewById(R.id.fee);
           pic=itemView.findViewById(R.id.pic);
           addBtn=itemView.findViewById(R.id.addBtn);
-
-
-
         }
     }
 }
